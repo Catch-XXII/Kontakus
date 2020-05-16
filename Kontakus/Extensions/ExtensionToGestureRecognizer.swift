@@ -74,7 +74,7 @@ extension MainViewController: UIGestureRecognizerDelegate {
             number?.faceTime()
         }
         else if searchController.searchBar.selectedScopeButtonIndex == 3 {
-            email?.send(anEmailTo: email!)
+            email?.send(emailTo: email!)
         }        
     }
     

@@ -15,8 +15,8 @@ extension MainViewController: ViewGenerator, RandomAvatar {
     
     func positionCalculator(count: Int) {
         var pointArray: [CGPoint] = []
-        let ToY = (count / 3 * 120 + 120)
-        for j in stride(from: 0, to: ToY, by: 120) {
+        let upToY = (count / 3 * 120 + 120)
+        for j in stride(from: 0, to: upToY, by: 120) {
             for i in stride(from: 0, to: 295, by: 110) {
                 pointArray.append(CGPoint(x: i, y: j))
             }

@@ -65,8 +65,8 @@ extension String {
         }
     }
     
-    func send(anEmailTo: String) {
-        guard let url = URL(string: "mailto:\(anEmailTo)"),
+    func send(emailTo: String) {
+        guard let url = URL(string: "mailto:\(emailTo)"),
         UIApplication.shared.canOpenURL(url) else { return }
         if #available(iOS 10, *) {
             UIApplication.shared.open(url)
