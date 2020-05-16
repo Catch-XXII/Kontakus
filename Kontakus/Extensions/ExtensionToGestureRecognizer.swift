@@ -49,8 +49,8 @@ extension MainViewController: UIGestureRecognizerDelegate {
             }
             else if recognizer.state == .ended {
                 profileView.backgroundColor = nil
-                personArray[index].centerX = Float((profileView.frame.minX))
-                personArray[index].centerY = Float((profileView.frame.minY))
+                personArray[index].centerX = Float(profileView.frame.minX)
+                personArray[index].centerY = Float(profileView.frame.minY)
                 DatabaseOperations.shared().saveContext()
             }
         }

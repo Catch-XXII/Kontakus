@@ -35,7 +35,7 @@ extension MainViewController: FetchAndSave {
             
             request.sortOrder = CNContactSortOrder.userDefault
             
-            try! store.enumerateContacts(with: request, usingBlock: {
+            try? store.enumerateContacts(with: request, usingBlock: {
                 (contact, stop) in
                 let newPerson = DatabaseOperations.shared().createPerson(contact: contact)
                 self.nameArray.append(newPerson.name!)

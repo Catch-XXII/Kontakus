@@ -32,7 +32,7 @@ extension MainViewController: UISearchBarDelegate, UISearchResultsUpdating {
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         searchBar.setShowsCancelButton(true, animated: true)
-        for ob: UIView in ((searchBar.subviews[0] )).subviews {
+        for ob: UIView in (searchBar.subviews[0] ).subviews {
             if let z = ob as? UIButton {
                 let btn: UIButton = z
                 btn.setTitleColor(UIColor.kontakBlue, for: .normal)

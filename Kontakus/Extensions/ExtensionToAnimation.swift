@@ -33,8 +33,10 @@ extension MainViewController: Animation {
         UIView.animate(withDuration: 1, animations:{
             self.cellArray[index].center.x = 170
             self.cellArray[index].center.y = -60
-            self.cellArray[index].backgroundColor = .kontakBlue } )
-        { (complete) in DispatchQueue.main.async { completion() } }
+            self.cellArray[index].backgroundColor = .kontakBlue } ) {
+            (complete) in DispatchQueue.main.async { completion() }
+            
+        }
     }
     
     func moveOut(index: Int, completion:@escaping ()-> Void) {
@@ -43,7 +45,12 @@ extension MainViewController: Animation {
             UIView.animate(withDuration: 1, animations: {
                 self.cellArray[index].frame = CGRect(x: CGFloat(self.personArray[index].centerX), y: CGFloat(self.personArray[index].centerY + 120), width: CGFloat(120), height: CGFloat(120))
                 self.cellArray[index].backgroundColor = nil
-                for view in self.cellArray { view.transform = .identity } } )
-            { (complete) in DispatchQueue.main.async { completion() } } }
+                for view in self.cellArray {
+                    view.transform = .identity
+                    
+                } } ) {
+                (complete) in DispatchQueue.main.async { completion() }
+                
+            } }
     }
 }
