@@ -44,7 +44,7 @@ class MainViewController: UIViewController {
     func googleAdSetup() {
         let adSize = GADAdSizeFromCGSize(CGSize(width: self.view.frame.width, height: 50))
         bannerViewGAD = GADBannerView(adSize: adSize)
-        bannerViewGAD.adUnitID = "ca-app-pub-6436920500856865/2978735566"
+        bannerViewGAD.adUnitID = (Bundle.main.object(forInfoDictionaryKey: "GadAdUnitId") as! String)
         bannerViewGAD.rootViewController = self
         bannerViewGAD.load(GADRequest())
         addBannerToView(bannerViewGAD)
@@ -72,7 +72,7 @@ class MainViewController: UIViewController {
     //MARK:- Share my app button
     @IBAction func shareApp(_ sender: Any) {
         let shareText = "Look what i have just found on AppStore tap on the link to download this cool App!\n"
-        let appURL = "https://apps.apple.com/us/app/id1499356819"
+        let appURL =  (Bundle.main.object(forInfoDictionaryKey: "AppURL") as! String)
         let activityVC = UIActivityViewController(activityItems: [shareText + appURL], applicationActivities: [])
         present(activityVC, animated: true)
     }
