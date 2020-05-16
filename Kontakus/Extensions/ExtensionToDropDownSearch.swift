@@ -33,7 +33,9 @@ extension MainViewController: SearchBarDropDown {
                             self.moveIn(index: i, completion: {
                                 if self.isTimmerOn == false {
                                     self.timerFired(index: i)
-                                    self.isTimmerOn = true }
+                                    self.isTimmerOn = true
+                                    
+                                }
                                 DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(12)) {
                                     self.moveOut(index: i, completion: {
                                         self.index = -1 } )

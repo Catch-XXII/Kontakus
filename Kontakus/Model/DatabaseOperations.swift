@@ -149,10 +149,9 @@ final class DatabaseOperations
         }
         
         if contact.imageDataAvailable {
-            if let data = contact.imageData {
-                if newPerson!.imageData == nil {
-                    newPerson!.imageData = data
-                }
+            guard let data = contact.imageData else { return newPerson!}
+            if newPerson!.imageData == nil {
+                newPerson!.imageData = data
             }
         }
         
